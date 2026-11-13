@@ -1,0 +1,2722 @@
+{
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/demo",
+      "status": 201,
+      "body": {
+        "mensaje": "Datos de demostración cargados."
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/salud",
+      "status": 200,
+      "body": {
+        "estado": "ok",
+        "version": "2.0.0"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalogos",
+      "status": 200,
+      "body": {
+        "categoria": [
+          {
+            "id": 1,
+            "nombre": "Almacén"
+          }
+        ],
+        "ciudad": [
+          {
+            "id": 1,
+            "nombre": "Córdoba",
+            "provincia_id": 1
+          }
+        ],
+        "domicilio": [
+          {
+            "id": 1,
+            "calle": "Av. Circunvalación",
+            "altura": "1200",
+            "ciudad_id": 1
+          },
+          {
+            "id": 2,
+            "calle": "San Martín",
+            "altura": "245",
+            "ciudad_id": 1
+          },
+          {
+            "id": 3,
+            "calle": "Av. Rafael Núñez",
+            "altura": "4100",
+            "ciudad_id": 1
+          }
+        ],
+        "establecimiento": [
+          {
+            "id": 1,
+            "nombre": "Centro de distribución",
+            "es_central": true,
+            "domicilio_id": 1
+          },
+          {
+            "id": 2,
+            "nombre": "Local Centro",
+            "es_central": false,
+            "domicilio_id": 2
+          },
+          {
+            "id": 3,
+            "nombre": "Local Norte",
+            "es_central": false,
+            "domicilio_id": 3
+          }
+        ],
+        "estado_bulto": [
+          {
+            "id": 1,
+            "nombre": "Preparado"
+          },
+          {
+            "id": 2,
+            "nombre": "Precintado"
+          },
+          {
+            "id": 3,
+            "nombre": "En tránsito"
+          },
+          {
+            "id": 4,
+            "nombre": "Recibido"
+          },
+          {
+            "id": 5,
+            "nombre": "Verificado"
+          },
+          {
+            "id": 6,
+            "nombre": "Rechazado"
+          }
+        ],
+        "estado_compra": [
+          {
+            "id": 1,
+            "nombre": "Pendiente"
+          },
+          {
+            "id": 2,
+            "nombre": "Recibida"
+          }
+        ],
+        "estado_precinto": [
+          {
+            "id": 1,
+            "nombre": "Sin colocar"
+          },
+          {
+            "id": 2,
+            "nombre": "Intacto"
+          },
+          {
+            "id": 3,
+            "nombre": "Violado"
+          },
+          {
+            "id": 4,
+            "nombre": "No coincide"
+          }
+        ],
+        "estado_remito": [
+          {
+            "id": 1,
+            "nombre": "Pendiente"
+          },
+          {
+            "id": 2,
+            "nombre": "En tránsito"
+          },
+          {
+            "id": 3,
+            "nombre": "Recibido"
+          },
+          {
+            "id": 4,
+            "nombre": "Verificado"
+          },
+          {
+            "id": 5,
+            "nombre": "Rechazado"
+          }
+        ],
+        "estado_reposicion": [
+          {
+            "id": 1,
+            "nombre": "Pendiente"
+          },
+          {
+            "id": 2,
+            "nombre": "En preparación"
+          },
+          {
+            "id": 3,
+            "nombre": "En tránsito"
+          },
+          {
+            "id": 4,
+            "nombre": "Completada"
+          },
+          {
+            "id": 5,
+            "nombre": "Con rechazos"
+          }
+        ],
+        "metodo_pago": [
+          {
+            "id": 1,
+            "nombre": "Efectivo"
+          },
+          {
+            "id": 2,
+            "nombre": "Tarjeta"
+          },
+          {
+            "id": 3,
+            "nombre": "Transferencia"
+          }
+        ],
+        "motivo": [
+          {
+            "id": 1,
+            "nombre": "Cambio solicitado"
+          },
+          {
+            "id": 2,
+            "nombre": "Error en la compra"
+          },
+          {
+            "id": 3,
+            "nombre": "Disconformidad"
+          }
+        ],
+        "producto": [
+          {
+            "id": 1,
+            "nombre": "Yerba mate 1 kg",
+            "detalle": "Producto de demostración",
+            "categoria_id": 1,
+            "precio": 650000,
+            "costo_referencia": 400000,
+            "esta_activo": true,
+            "codigo": "YER-001"
+          },
+          {
+            "id": 2,
+            "nombre": "Café molido 250 g",
+            "detalle": "Producto de demostración",
+            "categoria_id": 1,
+            "precio": 480000,
+            "costo_referencia": 290000,
+            "esta_activo": true,
+            "codigo": "CAF-001"
+          },
+          {
+            "id": 3,
+            "nombre": "Azúcar 1 kg",
+            "detalle": "Producto de demostración",
+            "categoria_id": 1,
+            "precio": 180000,
+            "costo_referencia": 100000,
+            "esta_activo": true,
+            "codigo": "AZU-001"
+          }
+        ],
+        "proveedor": [
+          {
+            "id": 1,
+            "CUIT": "30000000000",
+            "nombre": "Distribuidora de ejemplo",
+            "esta_activo": true
+          }
+        ],
+        "provincia": [
+          {
+            "id": 1,
+            "nombre": "Córdoba"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/compras",
+      "status": 200,
+      "body": [
+        {
+          "id": 1,
+          "proveedor_id": 1,
+          "estado_id": 2,
+          "fecha": "<timestamp>",
+          "estado": "Recibida",
+          "proveedor": "Distribuidora de ejemplo",
+          "total": 79000000,
+          "detalles": [
+            {
+              "id": 1,
+              "producto_id": 1,
+              "compra_id": 1,
+              "cantidad": 100,
+              "costo": 400000
+            },
+            {
+              "id": 2,
+              "producto_id": 2,
+              "compra_id": 1,
+              "cantidad": 100,
+              "costo": 290000
+            },
+            {
+              "id": 3,
+              "producto_id": 3,
+              "compra_id": 1,
+              "cantidad": 100,
+              "costo": 100000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/reposiciones",
+      "status": 200,
+      "body": [
+        {
+          "id": 2,
+          "establecimiento_solicitante_id": 3,
+          "establecimiento_proveedor_id": 1,
+          "fecha": "<timestamp>",
+          "estado_id": 5,
+          "origen": "Centro de distribución",
+          "destino": "Local Norte",
+          "estado": "Con rechazos",
+          "detalles": [
+            {
+              "id": 4,
+              "producto_id": 1,
+              "orden_id": 2,
+              "cantidad": 8,
+              "asignada": 8
+            }
+          ],
+          "remitos": [
+            {
+              "id": 2,
+              "orden_reposicion_id": 2,
+              "estado_remito_id": 5,
+              "numero_remito": "R-DEMO-002",
+              "fecha_emision": "<timestamp>",
+              "estado": "Rechazado",
+              "bultos": [
+                {
+                  "id": 3,
+                  "remito_id": 2,
+                  "estado_precinto_id": 3,
+                  "estado_bulto_id": 6,
+                  "codigo_precinto": "P-DEMO-3",
+                  "estado": "Rechazado",
+                  "estado_precinto": "Violado",
+                  "detalles": [
+                    {
+                      "id": 4,
+                      "producto_id": 1,
+                      "bulto_id": 3,
+                      "cantidad": 8
+                    }
+                  ],
+                  "historial": [
+                    {
+                      "id": 11,
+                      "bulto_id": 3,
+                      "estado_bulto_id": 1,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Mercadería reservada en el CD.",
+                      "estado": "Preparado"
+                    },
+                    {
+                      "id": 12,
+                      "bulto_id": 3,
+                      "estado_bulto_id": 2,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Precintar",
+                      "estado": "Precintado"
+                    },
+                    {
+                      "id": 13,
+                      "bulto_id": 3,
+                      "estado_bulto_id": 3,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Despachar",
+                      "estado": "En tránsito"
+                    },
+                    {
+                      "id": 14,
+                      "bulto_id": 3,
+                      "estado_bulto_id": 4,
+                      "fecha": "<timestamp>",
+                      "responsable": "Luis Demo",
+                      "observacion": "Recibir",
+                      "estado": "Recibido"
+                    },
+                    {
+                      "id": 15,
+                      "bulto_id": 3,
+                      "estado_bulto_id": 6,
+                      "fecha": "<timestamp>",
+                      "responsable": "Luis Demo",
+                      "observacion": "Precinto roto al recibir (ejemplo).",
+                      "estado": "Rechazado"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "establecimiento_solicitante_id": 2,
+          "establecimiento_proveedor_id": 1,
+          "fecha": "<timestamp>",
+          "estado_id": 4,
+          "origen": "Centro de distribución",
+          "destino": "Local Centro",
+          "estado": "Completada",
+          "detalles": [
+            {
+              "id": 1,
+              "producto_id": 1,
+              "orden_id": 1,
+              "cantidad": 20,
+              "asignada": 20
+            },
+            {
+              "id": 2,
+              "producto_id": 2,
+              "orden_id": 1,
+              "cantidad": 15,
+              "asignada": 15
+            },
+            {
+              "id": 3,
+              "producto_id": 3,
+              "orden_id": 1,
+              "cantidad": 30,
+              "asignada": 30
+            }
+          ],
+          "remitos": [
+            {
+              "id": 1,
+              "orden_reposicion_id": 1,
+              "estado_remito_id": 4,
+              "numero_remito": "R-DEMO-001",
+              "fecha_emision": "<timestamp>",
+              "estado": "Verificado",
+              "bultos": [
+                {
+                  "id": 1,
+                  "remito_id": 1,
+                  "estado_precinto_id": 2,
+                  "estado_bulto_id": 5,
+                  "codigo_precinto": "P-DEMO-1",
+                  "estado": "Verificado",
+                  "estado_precinto": "Intacto",
+                  "detalles": [
+                    {
+                      "id": 1,
+                      "producto_id": 1,
+                      "bulto_id": 1,
+                      "cantidad": 20
+                    },
+                    {
+                      "id": 2,
+                      "producto_id": 2,
+                      "bulto_id": 1,
+                      "cantidad": 15
+                    }
+                  ],
+                  "historial": [
+                    {
+                      "id": 1,
+                      "bulto_id": 1,
+                      "estado_bulto_id": 1,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Mercadería reservada en el CD.",
+                      "estado": "Preparado"
+                    },
+                    {
+                      "id": 3,
+                      "bulto_id": 1,
+                      "estado_bulto_id": 2,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Precintar",
+                      "estado": "Precintado"
+                    },
+                    {
+                      "id": 5,
+                      "bulto_id": 1,
+                      "estado_bulto_id": 3,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Despachar",
+                      "estado": "En tránsito"
+                    },
+                    {
+                      "id": 6,
+                      "bulto_id": 1,
+                      "estado_bulto_id": 4,
+                      "fecha": "<timestamp>",
+                      "responsable": "Luis Demo",
+                      "observacion": "Recibir",
+                      "estado": "Recibido"
+                    },
+                    {
+                      "id": 7,
+                      "bulto_id": 1,
+                      "estado_bulto_id": 5,
+                      "fecha": "<timestamp>",
+                      "responsable": "Luis Demo",
+                      "observacion": "Verificar",
+                      "estado": "Verificado"
+                    }
+                  ]
+                },
+                {
+                  "id": 2,
+                  "remito_id": 1,
+                  "estado_precinto_id": 2,
+                  "estado_bulto_id": 5,
+                  "codigo_precinto": "P-DEMO-2",
+                  "estado": "Verificado",
+                  "estado_precinto": "Intacto",
+                  "detalles": [
+                    {
+                      "id": 3,
+                      "producto_id": 3,
+                      "bulto_id": 2,
+                      "cantidad": 30
+                    }
+                  ],
+                  "historial": [
+                    {
+                      "id": 2,
+                      "bulto_id": 2,
+                      "estado_bulto_id": 1,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Mercadería reservada en el CD.",
+                      "estado": "Preparado"
+                    },
+                    {
+                      "id": 4,
+                      "bulto_id": 2,
+                      "estado_bulto_id": 2,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Precintar",
+                      "estado": "Precintado"
+                    },
+                    {
+                      "id": 8,
+                      "bulto_id": 2,
+                      "estado_bulto_id": 3,
+                      "fecha": "<timestamp>",
+                      "responsable": "Ana Demo",
+                      "observacion": "Despachar",
+                      "estado": "En tránsito"
+                    },
+                    {
+                      "id": 9,
+                      "bulto_id": 2,
+                      "estado_bulto_id": 4,
+                      "fecha": "<timestamp>",
+                      "responsable": "Luis Demo",
+                      "observacion": "Recibir",
+                      "estado": "Recibido"
+                    },
+                    {
+                      "id": 10,
+                      "bulto_id": 2,
+                      "estado_bulto_id": 5,
+                      "fecha": "<timestamp>",
+                      "responsable": "Luis Demo",
+                      "observacion": "Verificar",
+                      "estado": "Verificado"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/ventas",
+      "status": 200,
+      "body": [
+        {
+          "id": 1,
+          "local_id": 2,
+          "metodo_pago_id": 1,
+          "total": 2910000,
+          "fecha": "<timestamp>",
+          "numero_comprobante": "V-00000001",
+          "local": "Local Centro",
+          "metodo_pago": "Efectivo",
+          "reintegrado": 650000
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/ventas/1",
+      "status": 200,
+      "body": {
+        "id": 1,
+        "local_id": 2,
+        "metodo_pago_id": 1,
+        "total": 2910000,
+        "fecha": "<timestamp>",
+        "numero_comprobante": "V-00000001",
+        "local": "Local Centro",
+        "metodo_pago": "Efectivo",
+        "detalles": [
+          {
+            "id": 1,
+            "producto_id": 1,
+            "venta_id": 1,
+            "cantidad": 3,
+            "precio_unitario": 650000,
+            "descuento_aplicado": 0,
+            "costo_unitario": 400000,
+            "producto": "Yerba mate 1 kg",
+            "devuelta": 1,
+            "subtotal": 1950000
+          },
+          {
+            "id": 2,
+            "producto_id": 2,
+            "venta_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 480000,
+            "descuento_aplicado": 0,
+            "costo_unitario": 290000,
+            "producto": "Café molido 250 g",
+            "devuelta": 0,
+            "subtotal": 960000
+          }
+        ],
+        "devoluciones": [
+          {
+            "id": 1,
+            "venta_id": 1,
+            "motivo_id": 1,
+            "metodo_reintegro_id": 1,
+            "detalle": "Ejemplo de devolución parcial apta para reventa.",
+            "fecha": "<timestamp>",
+            "numero_comprobante": "D-00000001",
+            "motivo": "Cambio solicitado",
+            "metodo_reintegro": "Efectivo",
+            "total": 650000,
+            "detalles": [
+              {
+                "id": 1,
+                "producto_id": 1,
+                "devolucion_id": 1,
+                "cantidad": 1,
+                "importe_unitario": 650000
+              }
+            ]
+          }
+        ],
+        "reintegrado": 650000
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/inventario",
+      "status": 200,
+      "body": [
+        {
+          "establecimiento_id": 3,
+          "establecimiento": "Local Norte",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 10,
+          "faltante": 10,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 3,
+          "establecimiento": "Local Norte",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 10,
+          "faltante": 10,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 3,
+          "establecimiento": "Local Norte",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 10,
+          "faltante": 10,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 1,
+          "establecimiento": "Centro de distribución",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 70,
+          "reservado": 0,
+          "disponible": 70,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 7000000
+        },
+        {
+          "establecimiento_id": 1,
+          "establecimiento": "Centro de distribución",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 85,
+          "reservado": 0,
+          "disponible": 85,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 24650000
+        },
+        {
+          "establecimiento_id": 1,
+          "establecimiento": "Centro de distribución",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 72,
+          "reservado": 0,
+          "disponible": 72,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 28800000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 30,
+          "reservado": 0,
+          "disponible": 30,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 3000000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 13,
+          "reservado": 0,
+          "disponible": 13,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 3770000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 18,
+          "reservado": 0,
+          "disponible": 18,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 7200000
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/inventario?establecimiento_id=2",
+      "status": 200,
+      "body": [
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 30,
+          "reservado": 0,
+          "disponible": 30,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 3000000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 13,
+          "reservado": 0,
+          "disponible": 13,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 3770000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 18,
+          "reservado": 0,
+          "disponible": 18,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 7200000
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/inventario/movimientos",
+      "status": 200,
+      "body": [
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": -8,
+          "concepto": "Despacho",
+          "referencia": "B-3"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": 1,
+          "concepto": "Devolución apta",
+          "referencia": "D-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": -3,
+          "concepto": "Venta",
+          "referencia": "V-00000001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": -2,
+          "concepto": "Venta",
+          "referencia": "V-00000001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": 20,
+          "concepto": "Recepción verificada",
+          "referencia": "R-DEMO-001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": 15,
+          "concepto": "Recepción verificada",
+          "referencia": "R-DEMO-001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "cantidad": 30,
+          "concepto": "Recepción verificada",
+          "referencia": "R-DEMO-001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "cantidad": -30,
+          "concepto": "Despacho",
+          "referencia": "B-2"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": -20,
+          "concepto": "Despacho",
+          "referencia": "B-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": -15,
+          "concepto": "Despacho",
+          "referencia": "B-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": 100,
+          "concepto": "Compra recibida",
+          "referencia": "C-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": 100,
+          "concepto": "Compra recibida",
+          "referencia": "C-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "cantidad": 100,
+          "concepto": "Compra recibida",
+          "referencia": "C-1"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/reportes",
+      "status": 200,
+      "body": {
+        "desde": "2000-01-01",
+        "hasta": "<today>",
+        "establecimiento_id": null,
+        "ventas": [
+          {
+            "local": "Local Centro",
+            "medio_pago": "Efectivo",
+            "bruto": 2910000,
+            "reintegros": 650000,
+            "neto": 2260000
+          }
+        ],
+        "productos": [
+          {
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "unidades_netas": 2,
+            "ingreso_neto": 1300000,
+            "costo_neto": 800000,
+            "margen_estimado": 500000
+          },
+          {
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "unidades_netas": 2,
+            "ingreso_neto": 960000,
+            "costo_neto": 580000,
+            "margen_estimado": 380000
+          }
+        ],
+        "existencias": [
+          {
+            "establecimiento_id": 3,
+            "establecimiento": "Local Norte",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 10,
+            "faltante": 10,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 3,
+            "establecimiento": "Local Norte",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 10,
+            "faltante": 10,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 3,
+            "establecimiento": "Local Norte",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 10,
+            "faltante": 10,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 1,
+            "establecimiento": "Centro de distribución",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 70,
+            "reservado": 0,
+            "disponible": 70,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 7000000
+          },
+          {
+            "establecimiento_id": 1,
+            "establecimiento": "Centro de distribución",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 85,
+            "reservado": 0,
+            "disponible": 85,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 24650000
+          },
+          {
+            "establecimiento_id": 1,
+            "establecimiento": "Centro de distribución",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 72,
+            "reservado": 0,
+            "disponible": 72,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 28800000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 30,
+            "reservado": 0,
+            "disponible": 30,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 3000000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 13,
+            "reservado": 0,
+            "disponible": 13,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 3770000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 18,
+            "reservado": 0,
+            "disponible": 18,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 7200000
+          }
+        ],
+        "rechazos": [
+          {
+            "destino": "Local Norte",
+            "bulto_id": 3,
+            "numero_remito": "R-DEMO-002",
+            "fecha": "<timestamp>",
+            "motivo": "Precinto roto al recibir (ejemplo).",
+            "unidades": 8,
+            "valor_referencia": 3200000
+          }
+        ],
+        "transito": [
+          {
+            "destino": "Local Centro",
+            "recibidos": 2,
+            "horas_promedio": 0.0,
+            "en_transito": 0
+          },
+          {
+            "destino": "Local Norte",
+            "recibidos": 1,
+            "horas_promedio": 0.0,
+            "en_transito": 0
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/reportes?establecimiento_id=2",
+      "status": 200,
+      "body": {
+        "desde": "2000-01-01",
+        "hasta": "<today>",
+        "establecimiento_id": 2,
+        "ventas": [
+          {
+            "local": "Local Centro",
+            "medio_pago": "Efectivo",
+            "bruto": 2910000,
+            "reintegros": 650000,
+            "neto": 2260000
+          }
+        ],
+        "productos": [
+          {
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "unidades_netas": 2,
+            "ingreso_neto": 1300000,
+            "costo_neto": 800000,
+            "margen_estimado": 500000
+          },
+          {
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "unidades_netas": 2,
+            "ingreso_neto": 960000,
+            "costo_neto": 580000,
+            "margen_estimado": 380000
+          }
+        ],
+        "existencias": [
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 30,
+            "reservado": 0,
+            "disponible": 30,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 3000000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 13,
+            "reservado": 0,
+            "disponible": 13,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 3770000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 18,
+            "reservado": 0,
+            "disponible": 18,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 7200000
+          }
+        ],
+        "rechazos": [],
+        "transito": [
+          {
+            "destino": "Local Centro",
+            "recibidos": 2,
+            "horas_promedio": 0.0,
+            "en_transito": 0
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/demo",
+      "status": 409,
+      "body": {
+        "detail": "La demo solo se puede cargar en una base vacía; sus datos actuales se conservan."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/compras/1/recepcion",
+      "status": 409,
+      "body": {
+        "detail": "La compra ya fue recibida; no se puede acreditar nuevamente."
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/ventas/999",
+      "status": 404,
+      "body": {
+        "detail": "No existe venta #999."
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/reportes?desde=2026-12-01&hasta=2026-01-01",
+      "status": 409,
+      "body": {
+        "detail": "El período de consulta no es válido."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/ventas/cotizacion",
+      "status": 200,
+      "body": {
+        "detalles": [
+          {
+            "producto_id": 1,
+            "cantidad": 2,
+            "precio_unitario": 650000,
+            "descuento_aplicado": 65000,
+            "costo_unitario": 400000
+          }
+        ],
+        "total": 1170000
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/ventas",
+      "status": 201,
+      "body": {
+        "id": 2,
+        "local_id": 2,
+        "metodo_pago_id": 1,
+        "total": 1170000,
+        "fecha": "<timestamp>",
+        "numero_comprobante": "V-00000002",
+        "local": "Local Centro",
+        "metodo_pago": "Efectivo",
+        "detalles": [
+          {
+            "id": 3,
+            "producto_id": 1,
+            "venta_id": 2,
+            "cantidad": 2,
+            "precio_unitario": 650000,
+            "descuento_aplicado": 65000,
+            "costo_unitario": 400000,
+            "producto": "Yerba mate 1 kg",
+            "devuelta": 0,
+            "subtotal": 1170000
+          }
+        ],
+        "devoluciones": [],
+        "reintegrado": 0
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/ventas/2/devoluciones",
+      "status": 201,
+      "body": {
+        "id": 2,
+        "local_id": 2,
+        "metodo_pago_id": 1,
+        "total": 1170000,
+        "fecha": "<timestamp>",
+        "numero_comprobante": "V-00000002",
+        "local": "Local Centro",
+        "metodo_pago": "Efectivo",
+        "detalles": [
+          {
+            "id": 3,
+            "producto_id": 1,
+            "venta_id": 2,
+            "cantidad": 2,
+            "precio_unitario": 650000,
+            "descuento_aplicado": 65000,
+            "costo_unitario": 400000,
+            "producto": "Yerba mate 1 kg",
+            "devuelta": 1,
+            "subtotal": 1170000
+          }
+        ],
+        "devoluciones": [
+          {
+            "id": 2,
+            "venta_id": 2,
+            "motivo_id": 1,
+            "metodo_reintegro_id": 1,
+            "detalle": "Devolución de prueba",
+            "fecha": "<timestamp>",
+            "numero_comprobante": "D-00000002",
+            "motivo": "Cambio solicitado",
+            "metodo_reintegro": "Efectivo",
+            "total": 585000,
+            "detalles": [
+              {
+                "id": 2,
+                "producto_id": 1,
+                "devolucion_id": 2,
+                "cantidad": 1,
+                "importe_unitario": 585000
+              }
+            ]
+          }
+        ],
+        "reintegrado": 585000
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/inventario/minimo",
+      "status": 200,
+      "body": {
+        "id": 4,
+        "establecimiento_id": 2,
+        "producto_id": 1,
+        "almacenado_total": 17,
+        "reservado": 0,
+        "minimo_permitido": 15
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/categoria",
+      "status": 201,
+      "body": {
+        "id": 2,
+        "nombre": "Otra categoría"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/categoria/2",
+      "status": 200,
+      "body": {
+        "id": 2,
+        "nombre": "Otra categoría"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/provincia",
+      "status": 201,
+      "body": {
+        "id": 2,
+        "nombre": "Santa Fe"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/provincia/2",
+      "status": 200,
+      "body": {
+        "id": 2,
+        "nombre": "Santa Fe"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/ciudad",
+      "status": 201,
+      "body": {
+        "id": 2,
+        "nombre": "Rosario",
+        "provincia_id": 2
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/ciudad/2",
+      "status": 200,
+      "body": {
+        "id": 2,
+        "nombre": "Rosario",
+        "provincia_id": 2
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/domicilio",
+      "status": 201,
+      "body": {
+        "id": 4,
+        "calle": "San Martín",
+        "altura": "120",
+        "ciudad_id": 2
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/domicilio/4",
+      "status": 200,
+      "body": {
+        "id": 4,
+        "calle": "San Martín",
+        "altura": "120",
+        "ciudad_id": 2
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/establecimiento",
+      "status": 201,
+      "body": {
+        "id": 4,
+        "nombre": "Local Sur",
+        "es_central": false,
+        "domicilio_id": 4
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/establecimiento/4",
+      "status": 200,
+      "body": {
+        "id": 4,
+        "nombre": "Local Sur",
+        "es_central": false,
+        "domicilio_id": 4
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/proveedor",
+      "status": 201,
+      "body": {
+        "id": 2,
+        "CUIT": "30123456789",
+        "nombre": "Otro proveedor",
+        "esta_activo": true
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/proveedor/2",
+      "status": 200,
+      "body": {
+        "id": 2,
+        "CUIT": "30123456789",
+        "nombre": "Otro proveedor",
+        "esta_activo": true
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/producto",
+      "status": 201,
+      "body": {
+        "id": 4,
+        "nombre": "Producto nuevo",
+        "detalle": "",
+        "categoria_id": 2,
+        "precio": 1050,
+        "costo_referencia": 520,
+        "esta_activo": true,
+        "codigo": "P-004"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/producto/4",
+      "status": 200,
+      "body": {
+        "id": 4,
+        "nombre": "Producto nuevo",
+        "detalle": "",
+        "categoria_id": 2,
+        "precio": 1050,
+        "costo_referencia": 520,
+        "esta_activo": true,
+        "codigo": "P-004"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalogos/motivo",
+      "status": 201,
+      "body": {
+        "id": 4,
+        "nombre": "Otro motivo"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/catalogos/motivo/4",
+      "status": 200,
+      "body": {
+        "id": 4,
+        "nombre": "Otro motivo"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalogos",
+      "status": 200,
+      "body": {
+        "categoria": [
+          {
+            "id": 1,
+            "nombre": "Almacén"
+          },
+          {
+            "id": 2,
+            "nombre": "Otra categoría"
+          }
+        ],
+        "ciudad": [
+          {
+            "id": 1,
+            "nombre": "Córdoba",
+            "provincia_id": 1
+          },
+          {
+            "id": 2,
+            "nombre": "Rosario",
+            "provincia_id": 2
+          }
+        ],
+        "domicilio": [
+          {
+            "id": 1,
+            "calle": "Av. Circunvalación",
+            "altura": "1200",
+            "ciudad_id": 1
+          },
+          {
+            "id": 2,
+            "calle": "San Martín",
+            "altura": "245",
+            "ciudad_id": 1
+          },
+          {
+            "id": 3,
+            "calle": "Av. Rafael Núñez",
+            "altura": "4100",
+            "ciudad_id": 1
+          },
+          {
+            "id": 4,
+            "calle": "San Martín",
+            "altura": "120",
+            "ciudad_id": 2
+          }
+        ],
+        "establecimiento": [
+          {
+            "id": 1,
+            "nombre": "Centro de distribución",
+            "es_central": true,
+            "domicilio_id": 1
+          },
+          {
+            "id": 2,
+            "nombre": "Local Centro",
+            "es_central": false,
+            "domicilio_id": 2
+          },
+          {
+            "id": 3,
+            "nombre": "Local Norte",
+            "es_central": false,
+            "domicilio_id": 3
+          },
+          {
+            "id": 4,
+            "nombre": "Local Sur",
+            "es_central": false,
+            "domicilio_id": 4
+          }
+        ],
+        "estado_bulto": [
+          {
+            "id": 1,
+            "nombre": "Preparado"
+          },
+          {
+            "id": 2,
+            "nombre": "Precintado"
+          },
+          {
+            "id": 3,
+            "nombre": "En tránsito"
+          },
+          {
+            "id": 4,
+            "nombre": "Recibido"
+          },
+          {
+            "id": 5,
+            "nombre": "Verificado"
+          },
+          {
+            "id": 6,
+            "nombre": "Rechazado"
+          }
+        ],
+        "estado_compra": [
+          {
+            "id": 1,
+            "nombre": "Pendiente"
+          },
+          {
+            "id": 2,
+            "nombre": "Recibida"
+          }
+        ],
+        "estado_precinto": [
+          {
+            "id": 1,
+            "nombre": "Sin colocar"
+          },
+          {
+            "id": 2,
+            "nombre": "Intacto"
+          },
+          {
+            "id": 3,
+            "nombre": "Violado"
+          },
+          {
+            "id": 4,
+            "nombre": "No coincide"
+          }
+        ],
+        "estado_remito": [
+          {
+            "id": 1,
+            "nombre": "Pendiente"
+          },
+          {
+            "id": 2,
+            "nombre": "En tránsito"
+          },
+          {
+            "id": 3,
+            "nombre": "Recibido"
+          },
+          {
+            "id": 4,
+            "nombre": "Verificado"
+          },
+          {
+            "id": 5,
+            "nombre": "Rechazado"
+          }
+        ],
+        "estado_reposicion": [
+          {
+            "id": 1,
+            "nombre": "Pendiente"
+          },
+          {
+            "id": 2,
+            "nombre": "En preparación"
+          },
+          {
+            "id": 3,
+            "nombre": "En tránsito"
+          },
+          {
+            "id": 4,
+            "nombre": "Completada"
+          },
+          {
+            "id": 5,
+            "nombre": "Con rechazos"
+          }
+        ],
+        "metodo_pago": [
+          {
+            "id": 1,
+            "nombre": "Efectivo"
+          },
+          {
+            "id": 2,
+            "nombre": "Tarjeta"
+          },
+          {
+            "id": 3,
+            "nombre": "Transferencia"
+          }
+        ],
+        "motivo": [
+          {
+            "id": 1,
+            "nombre": "Cambio solicitado"
+          },
+          {
+            "id": 2,
+            "nombre": "Error en la compra"
+          },
+          {
+            "id": 3,
+            "nombre": "Disconformidad"
+          },
+          {
+            "id": 4,
+            "nombre": "Otro motivo"
+          }
+        ],
+        "producto": [
+          {
+            "id": 1,
+            "nombre": "Yerba mate 1 kg",
+            "detalle": "Producto de demostración",
+            "categoria_id": 1,
+            "precio": 650000,
+            "costo_referencia": 400000,
+            "esta_activo": true,
+            "codigo": "YER-001"
+          },
+          {
+            "id": 2,
+            "nombre": "Café molido 250 g",
+            "detalle": "Producto de demostración",
+            "categoria_id": 1,
+            "precio": 480000,
+            "costo_referencia": 290000,
+            "esta_activo": true,
+            "codigo": "CAF-001"
+          },
+          {
+            "id": 3,
+            "nombre": "Azúcar 1 kg",
+            "detalle": "Producto de demostración",
+            "categoria_id": 1,
+            "precio": 180000,
+            "costo_referencia": 100000,
+            "esta_activo": true,
+            "codigo": "AZU-001"
+          },
+          {
+            "id": 4,
+            "nombre": "Producto nuevo",
+            "detalle": "",
+            "categoria_id": 2,
+            "precio": 1050,
+            "costo_referencia": 520,
+            "esta_activo": true,
+            "codigo": "P-004"
+          }
+        ],
+        "proveedor": [
+          {
+            "id": 1,
+            "CUIT": "30000000000",
+            "nombre": "Distribuidora de ejemplo",
+            "esta_activo": true
+          },
+          {
+            "id": 2,
+            "CUIT": "30123456789",
+            "nombre": "Otro proveedor",
+            "esta_activo": true
+          }
+        ],
+        "provincia": [
+          {
+            "id": 1,
+            "nombre": "Córdoba"
+          },
+          {
+            "id": 2,
+            "nombre": "Santa Fe"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/inventario",
+      "status": 200,
+      "body": [
+        {
+          "establecimiento_id": 3,
+          "establecimiento": "Local Norte",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 10,
+          "faltante": 10,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 3,
+          "establecimiento": "Local Norte",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 10,
+          "faltante": 10,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 3,
+          "establecimiento": "Local Norte",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 10,
+          "faltante": 10,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 1,
+          "establecimiento": "Centro de distribución",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 70,
+          "reservado": 0,
+          "disponible": 70,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 7000000
+        },
+        {
+          "establecimiento_id": 1,
+          "establecimiento": "Centro de distribución",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 85,
+          "reservado": 0,
+          "disponible": 85,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 24650000
+        },
+        {
+          "establecimiento_id": 1,
+          "establecimiento": "Centro de distribución",
+          "producto_id": 4,
+          "codigo": "P-004",
+          "producto": "Producto nuevo",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 0,
+          "faltante": 0,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 1,
+          "establecimiento": "Centro de distribución",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 72,
+          "reservado": 0,
+          "disponible": 72,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 28800000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 30,
+          "reservado": 0,
+          "disponible": 30,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 3000000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 13,
+          "reservado": 0,
+          "disponible": 13,
+          "minimo_permitido": 10,
+          "faltante": 0,
+          "valorizacion": 3770000
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 4,
+          "codigo": "P-004",
+          "producto": "Producto nuevo",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 0,
+          "faltante": 0,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 2,
+          "establecimiento": "Local Centro",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 17,
+          "reservado": 0,
+          "disponible": 17,
+          "minimo_permitido": 15,
+          "faltante": 0,
+          "valorizacion": 6800000
+        },
+        {
+          "establecimiento_id": 3,
+          "establecimiento": "Local Norte",
+          "producto_id": 4,
+          "codigo": "P-004",
+          "producto": "Producto nuevo",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 0,
+          "faltante": 0,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 4,
+          "establecimiento": "Local Sur",
+          "producto_id": 3,
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 0,
+          "faltante": 0,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 4,
+          "establecimiento": "Local Sur",
+          "producto_id": 2,
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 0,
+          "faltante": 0,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 4,
+          "establecimiento": "Local Sur",
+          "producto_id": 4,
+          "codigo": "P-004",
+          "producto": "Producto nuevo",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 0,
+          "faltante": 0,
+          "valorizacion": 0
+        },
+        {
+          "establecimiento_id": 4,
+          "establecimiento": "Local Sur",
+          "producto_id": 1,
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "almacenado_total": 0,
+          "reservado": 0,
+          "disponible": 0,
+          "minimo_permitido": 0,
+          "faltante": 0,
+          "valorizacion": 0
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/ventas",
+      "status": 200,
+      "body": [
+        {
+          "id": 2,
+          "local_id": 2,
+          "metodo_pago_id": 1,
+          "total": 1170000,
+          "fecha": "<timestamp>",
+          "numero_comprobante": "V-00000002",
+          "local": "Local Centro",
+          "metodo_pago": "Efectivo",
+          "reintegrado": 585000
+        },
+        {
+          "id": 1,
+          "local_id": 2,
+          "metodo_pago_id": 1,
+          "total": 2910000,
+          "fecha": "<timestamp>",
+          "numero_comprobante": "V-00000001",
+          "local": "Local Centro",
+          "metodo_pago": "Efectivo",
+          "reintegrado": 650000
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/ventas/2",
+      "status": 200,
+      "body": {
+        "id": 2,
+        "local_id": 2,
+        "metodo_pago_id": 1,
+        "total": 1170000,
+        "fecha": "<timestamp>",
+        "numero_comprobante": "V-00000002",
+        "local": "Local Centro",
+        "metodo_pago": "Efectivo",
+        "detalles": [
+          {
+            "id": 3,
+            "producto_id": 1,
+            "venta_id": 2,
+            "cantidad": 2,
+            "precio_unitario": 650000,
+            "descuento_aplicado": 65000,
+            "costo_unitario": 400000,
+            "producto": "Yerba mate 1 kg",
+            "devuelta": 1,
+            "subtotal": 1170000
+          }
+        ],
+        "devoluciones": [
+          {
+            "id": 2,
+            "venta_id": 2,
+            "motivo_id": 1,
+            "metodo_reintegro_id": 1,
+            "detalle": "Devolución de prueba",
+            "fecha": "<timestamp>",
+            "numero_comprobante": "D-00000002",
+            "motivo": "Cambio solicitado",
+            "metodo_reintegro": "Efectivo",
+            "total": 585000,
+            "detalles": [
+              {
+                "id": 2,
+                "producto_id": 1,
+                "devolucion_id": 2,
+                "cantidad": 1,
+                "importe_unitario": 585000
+              }
+            ]
+          }
+        ],
+        "reintegrado": 585000
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/reportes",
+      "status": 200,
+      "body": {
+        "desde": "2000-01-01",
+        "hasta": "<today>",
+        "establecimiento_id": null,
+        "ventas": [
+          {
+            "local": "Local Centro",
+            "medio_pago": "Efectivo",
+            "bruto": 4080000,
+            "reintegros": 1235000,
+            "neto": 2845000
+          }
+        ],
+        "productos": [
+          {
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "unidades_netas": 3,
+            "ingreso_neto": 1885000,
+            "costo_neto": 1200000,
+            "margen_estimado": 685000
+          },
+          {
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "unidades_netas": 2,
+            "ingreso_neto": 960000,
+            "costo_neto": 580000,
+            "margen_estimado": 380000
+          }
+        ],
+        "existencias": [
+          {
+            "establecimiento_id": 3,
+            "establecimiento": "Local Norte",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 10,
+            "faltante": 10,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 3,
+            "establecimiento": "Local Norte",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 10,
+            "faltante": 10,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 3,
+            "establecimiento": "Local Norte",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 10,
+            "faltante": 10,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 1,
+            "establecimiento": "Centro de distribución",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 70,
+            "reservado": 0,
+            "disponible": 70,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 7000000
+          },
+          {
+            "establecimiento_id": 1,
+            "establecimiento": "Centro de distribución",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 85,
+            "reservado": 0,
+            "disponible": 85,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 24650000
+          },
+          {
+            "establecimiento_id": 1,
+            "establecimiento": "Centro de distribución",
+            "producto_id": 4,
+            "codigo": "P-004",
+            "producto": "Producto nuevo",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 0,
+            "faltante": 0,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 1,
+            "establecimiento": "Centro de distribución",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 72,
+            "reservado": 0,
+            "disponible": 72,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 28800000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 30,
+            "reservado": 0,
+            "disponible": 30,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 3000000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 13,
+            "reservado": 0,
+            "disponible": 13,
+            "minimo_permitido": 10,
+            "faltante": 0,
+            "valorizacion": 3770000
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 4,
+            "codigo": "P-004",
+            "producto": "Producto nuevo",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 0,
+            "faltante": 0,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 2,
+            "establecimiento": "Local Centro",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 17,
+            "reservado": 0,
+            "disponible": 17,
+            "minimo_permitido": 15,
+            "faltante": 0,
+            "valorizacion": 6800000
+          },
+          {
+            "establecimiento_id": 3,
+            "establecimiento": "Local Norte",
+            "producto_id": 4,
+            "codigo": "P-004",
+            "producto": "Producto nuevo",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 0,
+            "faltante": 0,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 4,
+            "establecimiento": "Local Sur",
+            "producto_id": 3,
+            "codigo": "AZU-001",
+            "producto": "Azúcar 1 kg",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 0,
+            "faltante": 0,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 4,
+            "establecimiento": "Local Sur",
+            "producto_id": 2,
+            "codigo": "CAF-001",
+            "producto": "Café molido 250 g",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 0,
+            "faltante": 0,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 4,
+            "establecimiento": "Local Sur",
+            "producto_id": 4,
+            "codigo": "P-004",
+            "producto": "Producto nuevo",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 0,
+            "faltante": 0,
+            "valorizacion": 0
+          },
+          {
+            "establecimiento_id": 4,
+            "establecimiento": "Local Sur",
+            "producto_id": 1,
+            "codigo": "YER-001",
+            "producto": "Yerba mate 1 kg",
+            "almacenado_total": 0,
+            "reservado": 0,
+            "disponible": 0,
+            "minimo_permitido": 0,
+            "faltante": 0,
+            "valorizacion": 0
+          }
+        ],
+        "rechazos": [
+          {
+            "destino": "Local Norte",
+            "bulto_id": 3,
+            "numero_remito": "R-DEMO-002",
+            "fecha": "<timestamp>",
+            "motivo": "Precinto roto al recibir (ejemplo).",
+            "unidades": 8,
+            "valor_referencia": 3200000
+          }
+        ],
+        "transito": [
+          {
+            "destino": "Local Centro",
+            "recibidos": 2,
+            "horas_promedio": 0.0,
+            "en_transito": 0
+          },
+          {
+            "destino": "Local Norte",
+            "recibidos": 1,
+            "horas_promedio": 0.0,
+            "en_transito": 0
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/inventario/movimientos",
+      "status": 200,
+      "body": [
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": 1,
+          "concepto": "Devolución apta",
+          "referencia": "D-2"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": -2,
+          "concepto": "Venta",
+          "referencia": "V-00000002"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": -8,
+          "concepto": "Despacho",
+          "referencia": "B-3"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": 1,
+          "concepto": "Devolución apta",
+          "referencia": "D-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": -3,
+          "concepto": "Venta",
+          "referencia": "V-00000001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": -2,
+          "concepto": "Venta",
+          "referencia": "V-00000001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": 20,
+          "concepto": "Recepción verificada",
+          "referencia": "R-DEMO-001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": 15,
+          "concepto": "Recepción verificada",
+          "referencia": "R-DEMO-001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Local Centro",
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "cantidad": 30,
+          "concepto": "Recepción verificada",
+          "referencia": "R-DEMO-001"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "cantidad": -30,
+          "concepto": "Despacho",
+          "referencia": "B-2"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": -20,
+          "concepto": "Despacho",
+          "referencia": "B-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": -15,
+          "concepto": "Despacho",
+          "referencia": "B-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "YER-001",
+          "producto": "Yerba mate 1 kg",
+          "cantidad": 100,
+          "concepto": "Compra recibida",
+          "referencia": "C-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "CAF-001",
+          "producto": "Café molido 250 g",
+          "cantidad": 100,
+          "concepto": "Compra recibida",
+          "referencia": "C-1"
+        },
+        {
+          "fecha": "<timestamp>",
+          "establecimiento": "Centro de distribución",
+          "codigo": "AZU-001",
+          "producto": "Azúcar 1 kg",
+          "cantidad": 100,
+          "concepto": "Compra recibida",
+          "referencia": "C-1"
+        }
+      ]
+    }
+  ],
+  "database_schema": [
+    [
+      "index",
+      "ix_cambio_estado_bulto_bulto_id",
+      "cambio_estado_bulto",
+      "CREATE INDEX ix_cambio_estado_bulto_bulto_id ON cambio_estado_bulto (bulto_id)"
+    ],
+    [
+      "index",
+      "ix_devolucion_fecha",
+      "devolucion",
+      "CREATE INDEX ix_devolucion_fecha ON devolucion (fecha)"
+    ],
+    [
+      "index",
+      "ix_venta_fecha",
+      "venta",
+      "CREATE INDEX ix_venta_fecha ON venta (fecha)"
+    ],
+    [
+      "index",
+      "unico_centro",
+      "establecimiento",
+      "CREATE UNIQUE INDEX unico_centro ON establecimiento (es_central) WHERE es_central = 1"
+    ],
+    [
+      "table",
+      "bulto",
+      "bulto",
+      "CREATE TABLE bulto (\n\tid INTEGER NOT NULL, \n\tremito_id INTEGER NOT NULL, \n\testado_precinto_id INTEGER NOT NULL, \n\testado_bulto_id INTEGER NOT NULL, \n\tcodigo_precinto VARCHAR(60), \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(remito_id) REFERENCES remito (id), \n\tFOREIGN KEY(estado_precinto_id) REFERENCES estado_precinto (id), \n\tFOREIGN KEY(estado_bulto_id) REFERENCES estado_bulto (id), \n\tUNIQUE (codigo_precinto)\n)"
+    ],
+    [
+      "table",
+      "cambio_estado_bulto",
+      "cambio_estado_bulto",
+      "CREATE TABLE cambio_estado_bulto (\n\tid INTEGER NOT NULL, \n\tbulto_id INTEGER NOT NULL, \n\testado_bulto_id INTEGER NOT NULL, \n\tfecha VARCHAR(40) NOT NULL, \n\tresponsable VARCHAR(150) NOT NULL, \n\tobservacion VARCHAR(500) NOT NULL, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(bulto_id) REFERENCES bulto (id), \n\tFOREIGN KEY(estado_bulto_id) REFERENCES estado_bulto (id)\n)"
+    ],
+    [
+      "table",
+      "categoria",
+      "categoria",
+      "CREATE TABLE categoria (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "ciudad",
+      "ciudad",
+      "CREATE TABLE ciudad (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tprovincia_id INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre, provincia_id), \n\tFOREIGN KEY(provincia_id) REFERENCES provincia (id)\n)"
+    ],
+    [
+      "table",
+      "compra",
+      "compra",
+      "CREATE TABLE compra (\n\tid INTEGER NOT NULL, \n\tproveedor_id INTEGER NOT NULL, \n\testado_id INTEGER NOT NULL, \n\tfecha VARCHAR(40) NOT NULL, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(proveedor_id) REFERENCES proveedor (id), \n\tFOREIGN KEY(estado_id) REFERENCES estado_compra (id)\n)"
+    ],
+    [
+      "table",
+      "detalle_bulto",
+      "detalle_bulto",
+      "CREATE TABLE detalle_bulto (\n\tid INTEGER NOT NULL, \n\tproducto_id INTEGER NOT NULL, \n\tbulto_id INTEGER NOT NULL, \n\tcantidad INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (bulto_id, producto_id), \n\tCHECK (cantidad > 0), \n\tFOREIGN KEY(producto_id) REFERENCES producto (id), \n\tFOREIGN KEY(bulto_id) REFERENCES bulto (id)\n)"
+    ],
+    [
+      "table",
+      "detalle_compra",
+      "detalle_compra",
+      "CREATE TABLE detalle_compra (\n\tid INTEGER NOT NULL, \n\tproducto_id INTEGER NOT NULL, \n\tcompra_id INTEGER NOT NULL, \n\tcantidad INTEGER NOT NULL, \n\tcosto INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (compra_id, producto_id), \n\tCHECK (cantidad > 0 AND costo >= 0), \n\tFOREIGN KEY(producto_id) REFERENCES producto (id), \n\tFOREIGN KEY(compra_id) REFERENCES compra (id)\n)"
+    ],
+    [
+      "table",
+      "detalle_devolucion",
+      "detalle_devolucion",
+      "CREATE TABLE detalle_devolucion (\n\tid INTEGER NOT NULL, \n\tproducto_id INTEGER NOT NULL, \n\tdevolucion_id INTEGER NOT NULL, \n\tcantidad INTEGER NOT NULL, \n\timporte_unitario INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (devolucion_id, producto_id), \n\tCHECK (cantidad > 0 AND importe_unitario >= 0), \n\tFOREIGN KEY(producto_id) REFERENCES producto (id), \n\tFOREIGN KEY(devolucion_id) REFERENCES devolucion (id)\n)"
+    ],
+    [
+      "table",
+      "detalle_reposicion",
+      "detalle_reposicion",
+      "CREATE TABLE detalle_reposicion (\n\tid INTEGER NOT NULL, \n\tproducto_id INTEGER NOT NULL, \n\torden_id INTEGER NOT NULL, \n\tcantidad INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (orden_id, producto_id), \n\tCHECK (cantidad > 0), \n\tFOREIGN KEY(producto_id) REFERENCES producto (id), \n\tFOREIGN KEY(orden_id) REFERENCES orden_reposicion (id)\n)"
+    ],
+    [
+      "table",
+      "detalle_venta",
+      "detalle_venta",
+      "CREATE TABLE detalle_venta (\n\tid INTEGER NOT NULL, \n\tproducto_id INTEGER NOT NULL, \n\tventa_id INTEGER NOT NULL, \n\tcantidad INTEGER NOT NULL, \n\tprecio_unitario INTEGER NOT NULL, \n\tdescuento_aplicado INTEGER NOT NULL, \n\tcosto_unitario INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (venta_id, producto_id), \n\tCHECK (cantidad > 0 AND precio_unitario > 0 AND descuento_aplicado >= 0 AND descuento_aplicado < precio_unitario AND costo_unitario >= 0), \n\tFOREIGN KEY(producto_id) REFERENCES producto (id), \n\tFOREIGN KEY(venta_id) REFERENCES venta (id)\n)"
+    ],
+    [
+      "table",
+      "devolucion",
+      "devolucion",
+      "CREATE TABLE devolucion (\n\tid INTEGER NOT NULL, \n\tventa_id INTEGER NOT NULL, \n\tmotivo_id INTEGER NOT NULL, \n\tmetodo_reintegro_id INTEGER NOT NULL, \n\tdetalle VARCHAR(500) NOT NULL, \n\tfecha VARCHAR(40) NOT NULL, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(venta_id) REFERENCES venta (id), \n\tFOREIGN KEY(motivo_id) REFERENCES motivo (id), \n\tFOREIGN KEY(metodo_reintegro_id) REFERENCES metodo_pago (id)\n)"
+    ],
+    [
+      "table",
+      "domicilio",
+      "domicilio",
+      "CREATE TABLE domicilio (\n\tid INTEGER NOT NULL, \n\tcalle VARCHAR(150) NOT NULL, \n\taltura VARCHAR(30) NOT NULL, \n\tciudad_id INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(ciudad_id) REFERENCES ciudad (id)\n)"
+    ],
+    [
+      "table",
+      "establecimiento",
+      "establecimiento",
+      "CREATE TABLE establecimiento (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tes_central BOOLEAN NOT NULL, \n\tdomicilio_id INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre), \n\tFOREIGN KEY(domicilio_id) REFERENCES domicilio (id)\n)"
+    ],
+    [
+      "table",
+      "estado_bulto",
+      "estado_bulto",
+      "CREATE TABLE estado_bulto (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "estado_compra",
+      "estado_compra",
+      "CREATE TABLE estado_compra (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "estado_precinto",
+      "estado_precinto",
+      "CREATE TABLE estado_precinto (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "estado_remito",
+      "estado_remito",
+      "CREATE TABLE estado_remito (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "estado_reposicion",
+      "estado_reposicion",
+      "CREATE TABLE estado_reposicion (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "existencia",
+      "existencia",
+      "CREATE TABLE existencia (\n\tid INTEGER NOT NULL, \n\testablecimiento_id INTEGER NOT NULL, \n\tproducto_id INTEGER NOT NULL, \n\talmacenado_total INTEGER NOT NULL, \n\treservado INTEGER NOT NULL, \n\tminimo_permitido INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (establecimiento_id, producto_id), \n\tCHECK (almacenado_total >= reservado AND reservado >= 0 AND minimo_permitido >= 0), \n\tFOREIGN KEY(establecimiento_id) REFERENCES establecimiento (id), \n\tFOREIGN KEY(producto_id) REFERENCES producto (id)\n)"
+    ],
+    [
+      "table",
+      "metodo_pago",
+      "metodo_pago",
+      "CREATE TABLE metodo_pago (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "motivo",
+      "motivo",
+      "CREATE TABLE motivo (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "orden_reposicion",
+      "orden_reposicion",
+      "CREATE TABLE orden_reposicion (\n\tid INTEGER NOT NULL, \n\testablecimiento_solicitante_id INTEGER NOT NULL, \n\testablecimiento_proveedor_id INTEGER NOT NULL, \n\tfecha VARCHAR(40) NOT NULL, \n\testado_id INTEGER NOT NULL, \n\tPRIMARY KEY (id), \n\tCHECK (establecimiento_solicitante_id <> establecimiento_proveedor_id), \n\tFOREIGN KEY(establecimiento_solicitante_id) REFERENCES establecimiento (id), \n\tFOREIGN KEY(establecimiento_proveedor_id) REFERENCES establecimiento (id), \n\tFOREIGN KEY(estado_id) REFERENCES estado_reposicion (id)\n)"
+    ],
+    [
+      "table",
+      "producto",
+      "producto",
+      "CREATE TABLE producto (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tdetalle TEXT NOT NULL, \n\tcategoria_id INTEGER NOT NULL, \n\tprecio INTEGER NOT NULL, \n\tcosto_referencia INTEGER NOT NULL, \n\testa_activo BOOLEAN NOT NULL, \n\tcodigo VARCHAR(50) NOT NULL, \n\tPRIMARY KEY (id), \n\tCHECK (precio > 0 AND costo_referencia >= 0), \n\tFOREIGN KEY(categoria_id) REFERENCES categoria (id), \n\tUNIQUE (codigo)\n)"
+    ],
+    [
+      "table",
+      "proveedor",
+      "proveedor",
+      "CREATE TABLE proveedor (\n\tid INTEGER NOT NULL, \n\t\"CUIT\" VARCHAR(11) NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\testa_activo BOOLEAN NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (\"CUIT\")\n)"
+    ],
+    [
+      "table",
+      "provincia",
+      "provincia",
+      "CREATE TABLE provincia (\n\tid INTEGER NOT NULL, \n\tnombre VARCHAR(150) NOT NULL, \n\tPRIMARY KEY (id), \n\tUNIQUE (nombre)\n)"
+    ],
+    [
+      "table",
+      "remito",
+      "remito",
+      "CREATE TABLE remito (\n\tid INTEGER NOT NULL, \n\torden_reposicion_id INTEGER NOT NULL, \n\testado_remito_id INTEGER NOT NULL, \n\tnumero_remito VARCHAR(50) NOT NULL, \n\tfecha_emision VARCHAR(40) NOT NULL, \n\tPRIMARY KEY (id), \n\tFOREIGN KEY(orden_reposicion_id) REFERENCES orden_reposicion (id), \n\tFOREIGN KEY(estado_remito_id) REFERENCES estado_remito (id), \n\tUNIQUE (numero_remito)\n)"
+    ],
+    [
+      "table",
+      "venta",
+      "venta",
+      "CREATE TABLE venta (\n\tid INTEGER NOT NULL, \n\tlocal_id INTEGER NOT NULL, \n\tmetodo_pago_id INTEGER NOT NULL, \n\ttotal INTEGER NOT NULL, \n\tfecha VARCHAR(40) NOT NULL, \n\tnumero_comprobante VARCHAR(50) NOT NULL, \n\tPRIMARY KEY (id), \n\tCHECK (total > 0), \n\tFOREIGN KEY(local_id) REFERENCES establecimiento (id), \n\tFOREIGN KEY(metodo_pago_id) REFERENCES metodo_pago (id), \n\tUNIQUE (numero_comprobante)\n)"
+    ],
+    [
+      "trigger",
+      "historial_no_delete",
+      "cambio_estado_bulto",
+      "CREATE TRIGGER historial_no_delete\n                  BEFORE DELETE ON cambio_estado_bulto BEGIN SELECT RAISE(ABORT, 'Historial inmutable'); END"
+    ],
+    [
+      "trigger",
+      "historial_no_update",
+      "cambio_estado_bulto",
+      "CREATE TRIGGER historial_no_update\n                  BEFORE UPDATE ON cambio_estado_bulto BEGIN SELECT RAISE(ABORT, 'Historial inmutable'); END"
+    ]
+  ]
+}

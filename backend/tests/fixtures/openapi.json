@@ -1,0 +1,2124 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Nexo · Distribución y ventas",
+    "description": "TP integrador DAO, grupo 40. Importes de respuesta en centavos; importes de entrada en pesos. Comprobantes internos académicos.",
+    "version": "2.0.0"
+  },
+  "paths": {
+    "/api/catalogos/categoria": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Categoria",
+        "operationId": "crear_categoria_api_catalogos_categoria_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NamedInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/categoria/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Categoria",
+        "operationId": "editar_categoria_api_catalogos_categoria__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NamedInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/provincia": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Provincia",
+        "operationId": "crear_provincia_api_catalogos_provincia_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NamedInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/provincia/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Provincia",
+        "operationId": "editar_provincia_api_catalogos_provincia__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NamedInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/ciudad": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Ciudad",
+        "operationId": "crear_ciudad_api_catalogos_ciudad_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CityInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/ciudad/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Ciudad",
+        "operationId": "editar_ciudad_api_catalogos_ciudad__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CityInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/domicilio": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Domicilio",
+        "operationId": "crear_domicilio_api_catalogos_domicilio_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/domicilio/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Domicilio",
+        "operationId": "editar_domicilio_api_catalogos_domicilio__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/establecimiento": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Establecimiento",
+        "operationId": "crear_establecimiento_api_catalogos_establecimiento_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstablishmentInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/establecimiento/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Establecimiento",
+        "operationId": "editar_establecimiento_api_catalogos_establecimiento__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstablishmentInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/proveedor": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Proveedor",
+        "operationId": "crear_proveedor_api_catalogos_proveedor_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/proveedor/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Proveedor",
+        "operationId": "editar_proveedor_api_catalogos_proveedor__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/producto": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Producto",
+        "operationId": "crear_producto_api_catalogos_producto_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/producto/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Producto",
+        "operationId": "editar_producto_api_catalogos_producto__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/motivo": {
+      "post": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Crear Motivo",
+        "operationId": "crear_motivo_api_catalogos_motivo_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NamedInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos/motivo/{id}": {
+      "put": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Editar Motivo",
+        "operationId": "editar_motivo_api_catalogos_motivo__id__put",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NamedInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/salud": {
+      "get": {
+        "tags": [
+          "Sistema"
+        ],
+        "summary": "Health",
+        "operationId": "health_api_salud_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalogos": {
+      "get": {
+        "tags": [
+          "Catálogos"
+        ],
+        "summary": "Catalogs",
+        "operationId": "catalogs_api_catalogos_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/compras": {
+      "get": {
+        "tags": [
+          "Compras"
+        ],
+        "summary": "Purchases",
+        "operationId": "purchases_api_compras_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Compras"
+        ],
+        "summary": "Purchase",
+        "operationId": "purchase_api_compras_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PurchaseInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/compras/{id}/recepcion": {
+      "post": {
+        "tags": [
+          "Compras"
+        ],
+        "summary": "Receive Purchase",
+        "operationId": "receive_purchase_api_compras__id__recepcion_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reposiciones": {
+      "get": {
+        "tags": [
+          "Logística"
+        ],
+        "summary": "Orders",
+        "operationId": "orders_api_reposiciones_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Logística"
+        ],
+        "summary": "Order",
+        "operationId": "order_api_reposiciones_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reposiciones/{id}/remitos": {
+      "post": {
+        "tags": [
+          "Logística"
+        ],
+        "summary": "Delivery",
+        "operationId": "delivery_api_reposiciones__id__remitos_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeliveryInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/remitos/{id}/bultos": {
+      "post": {
+        "tags": [
+          "Logística"
+        ],
+        "summary": "Package",
+        "operationId": "package_api_remitos__id__bultos_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PackageInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bultos/{id}/{accion}": {
+      "post": {
+        "tags": [
+          "Logística"
+        ],
+        "summary": "Transition",
+        "operationId": "transition_api_bultos__id___accion__post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          },
+          {
+            "name": "accion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Accion"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ventas": {
+      "get": {
+        "tags": [
+          "Ventas"
+        ],
+        "summary": "Sales",
+        "operationId": "sales_api_ventas_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Ventas"
+        ],
+        "summary": "Sale",
+        "operationId": "sale_api_ventas_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaleInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ventas/cotizacion": {
+      "post": {
+        "tags": [
+          "Ventas"
+        ],
+        "summary": "Quote",
+        "operationId": "quote_api_ventas_cotizacion_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuoteInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ventas/{id}": {
+      "get": {
+        "tags": [
+          "Ventas"
+        ],
+        "summary": "Sale Detail",
+        "operationId": "sale_detail_api_ventas__id__get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ventas/{id}/devoluciones": {
+      "post": {
+        "tags": [
+          "Ventas"
+        ],
+        "summary": "Refund",
+        "operationId": "refund_api_ventas__id__devoluciones_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefundInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/inventario": {
+      "get": {
+        "tags": [
+          "Inventario"
+        ],
+        "summary": "Inventory",
+        "operationId": "inventory_api_inventario_get",
+        "parameters": [
+          {
+            "name": "establecimiento_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Establecimiento Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/inventario/minimo": {
+      "put": {
+        "tags": [
+          "Inventario"
+        ],
+        "summary": "Minimum",
+        "operationId": "minimum_api_inventario_minimo_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MinimumInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/inventario/movimientos": {
+      "get": {
+        "tags": [
+          "Inventario"
+        ],
+        "summary": "Movements",
+        "operationId": "movements_api_inventario_movimientos_get",
+        "parameters": [
+          {
+            "name": "desde",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "default": "2000-01-01",
+              "title": "Desde"
+            }
+          },
+          {
+            "name": "hasta",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Hasta"
+            }
+          },
+          {
+            "name": "establecimiento_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Establecimiento Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reportes": {
+      "get": {
+        "tags": [
+          "Reportes"
+        ],
+        "summary": "Reports",
+        "operationId": "reports_api_reportes_get",
+        "parameters": [
+          {
+            "name": "desde",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "default": "2000-01-01",
+              "title": "Desde"
+            }
+          },
+          {
+            "name": "hasta",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Hasta"
+            }
+          },
+          {
+            "name": "establecimiento_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Establecimiento Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/demo": {
+      "post": {
+        "tags": [
+          "Sistema"
+        ],
+        "summary": "Demo",
+        "operationId": "demo_api_demo_post",
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddressInput": {
+        "properties": {
+          "calle": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Calle"
+          },
+          "altura": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 1,
+            "title": "Altura"
+          },
+          "ciudad_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Ciudad Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "calle",
+          "altura",
+          "ciudad_id"
+        ],
+        "title": "AddressInput"
+      },
+      "CityInput": {
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Nombre"
+          },
+          "provincia_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Provincia Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "nombre",
+          "provincia_id"
+        ],
+        "title": "CityInput"
+      },
+      "DeliveryInput": {
+        "properties": {
+          "numero_remito": {
+            "type": "string",
+            "maxLength": 50,
+            "minLength": 1,
+            "title": "Numero Remito"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "numero_remito"
+        ],
+        "title": "DeliveryInput"
+      },
+      "EstablishmentInput": {
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Nombre"
+          },
+          "es_central": {
+            "type": "boolean",
+            "title": "Es Central",
+            "default": false
+          },
+          "domicilio_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Domicilio Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "nombre",
+          "domicilio_id"
+        ],
+        "title": "EstablishmentInput"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LineInput": {
+        "properties": {
+          "producto_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Producto Id"
+          },
+          "cantidad": {
+            "type": "integer",
+            "maximum": 1000000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Cantidad"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "producto_id",
+          "cantidad"
+        ],
+        "title": "LineInput"
+      },
+      "MinimumInput": {
+        "properties": {
+          "establecimiento_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Establecimiento Id"
+          },
+          "producto_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Producto Id"
+          },
+          "minimo_permitido": {
+            "type": "integer",
+            "maximum": 1000000.0,
+            "minimum": 0.0,
+            "title": "Minimo Permitido"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "establecimiento_id",
+          "producto_id",
+          "minimo_permitido"
+        ],
+        "title": "MinimumInput"
+      },
+      "NamedInput": {
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Nombre"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "nombre"
+        ],
+        "title": "NamedInput"
+      },
+      "OrderInput": {
+        "properties": {
+          "establecimiento_solicitante_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Establecimiento Solicitante Id"
+          },
+          "establecimiento_proveedor_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Establecimiento Proveedor Id"
+          },
+          "detalles": {
+            "items": {
+              "$ref": "#/components/schemas/LineInput"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Detalles"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "establecimiento_solicitante_id",
+          "establecimiento_proveedor_id",
+          "detalles"
+        ],
+        "title": "OrderInput"
+      },
+      "PackageInput": {
+        "properties": {
+          "responsable": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Responsable"
+          },
+          "detalles": {
+            "items": {
+              "$ref": "#/components/schemas/LineInput"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Detalles"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "responsable",
+          "detalles"
+        ],
+        "title": "PackageInput"
+      },
+      "ProductInput": {
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Nombre"
+          },
+          "codigo": {
+            "type": "string",
+            "maxLength": 50,
+            "minLength": 1,
+            "title": "Codigo"
+          },
+          "detalle": {
+            "type": "string",
+            "maxLength": 1000,
+            "title": "Detalle",
+            "default": ""
+          },
+          "categoria_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Categoria Id"
+          },
+          "precio": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 999999999.99,
+                "minimum": 0.0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d{0,2}0*$"
+              }
+            ],
+            "title": "Precio"
+          },
+          "costo_referencia": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 999999999.99,
+                "minimum": 0.0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d{0,2}0*$"
+              }
+            ],
+            "title": "Costo Referencia"
+          },
+          "esta_activo": {
+            "type": "boolean",
+            "title": "Esta Activo",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "nombre",
+          "codigo",
+          "categoria_id",
+          "precio",
+          "costo_referencia"
+        ],
+        "title": "ProductInput"
+      },
+      "PurchaseInput": {
+        "properties": {
+          "proveedor_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Proveedor Id"
+          },
+          "detalles": {
+            "items": {
+              "$ref": "#/components/schemas/PurchaseLineInput"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Detalles"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "proveedor_id",
+          "detalles"
+        ],
+        "title": "PurchaseInput"
+      },
+      "PurchaseLineInput": {
+        "properties": {
+          "producto_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Producto Id"
+          },
+          "cantidad": {
+            "type": "integer",
+            "maximum": 1000000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Cantidad"
+          },
+          "costo": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 999999999.99,
+                "minimum": 0.0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d{0,2}0*$"
+              }
+            ],
+            "title": "Costo"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "producto_id",
+          "cantidad",
+          "costo"
+        ],
+        "title": "PurchaseLineInput"
+      },
+      "QuoteInput": {
+        "properties": {
+          "local_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Local Id"
+          },
+          "politica": {
+            "type": "string",
+            "enum": [
+              "lista",
+              "descuento_10"
+            ],
+            "title": "Politica",
+            "default": "lista"
+          },
+          "detalles": {
+            "items": {
+              "$ref": "#/components/schemas/LineInput"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Detalles"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "local_id",
+          "detalles"
+        ],
+        "title": "QuoteInput"
+      },
+      "RefundInput": {
+        "properties": {
+          "motivo_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Motivo Id"
+          },
+          "metodo_reintegro_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Metodo Reintegro Id"
+          },
+          "detalle": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Detalle"
+          },
+          "productos_aptos": {
+            "type": "boolean",
+            "title": "Productos Aptos"
+          },
+          "detalles": {
+            "items": {
+              "$ref": "#/components/schemas/LineInput"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Detalles"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "motivo_id",
+          "metodo_reintegro_id",
+          "detalle",
+          "productos_aptos",
+          "detalles"
+        ],
+        "title": "RefundInput"
+      },
+      "SaleInput": {
+        "properties": {
+          "local_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Local Id"
+          },
+          "politica": {
+            "type": "string",
+            "enum": [
+              "lista",
+              "descuento_10"
+            ],
+            "title": "Politica",
+            "default": "lista"
+          },
+          "detalles": {
+            "items": {
+              "$ref": "#/components/schemas/LineInput"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Detalles"
+          },
+          "metodo_pago_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Metodo Pago Id"
+          },
+          "importe_cobrado": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 999999999.99,
+                "minimum": 0.0
+              },
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d{0,2}0*$"
+              }
+            ],
+            "title": "Importe Cobrado"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "local_id",
+          "detalles",
+          "metodo_pago_id",
+          "importe_cobrado"
+        ],
+        "title": "SaleInput"
+      },
+      "SupplierInput": {
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Nombre"
+          },
+          "CUIT": {
+            "type": "string",
+            "maxLength": 20,
+            "minLength": 11,
+            "title": "Cuit"
+          },
+          "esta_activo": {
+            "type": "boolean",
+            "title": "Esta Activo",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "nombre",
+          "CUIT"
+        ],
+        "title": "SupplierInput"
+      },
+      "TransitionInput": {
+        "properties": {
+          "responsable": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Responsable"
+          },
+          "observacion": {
+            "type": "string",
+            "maxLength": 500,
+            "title": "Observacion",
+            "default": ""
+          },
+          "codigo_precinto": {
+            "type": "string",
+            "maxLength": 60,
+            "title": "Codigo Precinto",
+            "default": ""
+          },
+          "numero_remito": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Numero Remito",
+            "default": ""
+          },
+          "precinto_intacto": {
+            "type": "boolean",
+            "title": "Precinto Intacto",
+            "default": false
+          },
+          "contenido_conforme": {
+            "type": "boolean",
+            "title": "Contenido Conforme",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "responsable"
+        ],
+        "title": "TransitionInput"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
