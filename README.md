@@ -48,27 +48,20 @@ python -m app.seed
 
 La demo contiene un CD, dos locales, tres productos, una compra recibida, una reposición con dos bultos verificados, una venta de dos productos, una devolución parcial y un segundo remito rechazado por precinto roto.
 
-## Recorrer el sistema
-
-1. **Catálogo:** administrar productos, categorías, proveedores y establecimientos. Para crear una ubicación, elegir Provincias, Ciudades y Domicilios en el selector de otros catálogos, en ese orden. Crear el CD y después los locales. Producto/proveedor admiten desactivación.
-2. **Compras:** registrar varios productos y sus costos. La compra queda Pendiente; abrirla y confirmar su recepción para ingresar stock al CD.
-3. **Reposición y bultos:** cargar las necesidades consolidadas de un local, crear un remito y preparar sus bultos. La preparación reserva unidades del CD. Precintar todos los bultos de ese remito antes de iniciar su despacho. Una orden admite varios remitos para entregas parciales.
-4. Registrar despacho y recepción física por separado. Inspeccionar número de remito, código e integridad del precinto y conformidad del contenido. Un rechazo requiere observación. El destino no tiene disponible hasta que todo el remito esté verificado.
-5. **Ventas y devoluciones:** elegir local, productos, política de precios y un medio de pago. El importe cobrado debe coincidir con el total. Abrir el comprobante para imprimirlo o devolver unidades de la venta, con motivo, medio de reintegro y confirmación de aptitud para reventa.
-6. **Inventario:** consultar disponible, reservado, mínimo y valorización; editar mínimos por producto/local y consultar los movimientos.
-7. **Reportes:** consultar los cinco informes, con período inclusivo y establecimiento. Los filtros temporales usan UTC; las existencias muestran siempre la situación actual.
-
 ## Estructura
 
 ```text
 backend/
   app/
-    api/             rutas HTTP, validación y control de origen
-    application/     casos de uso y coordinación transaccional
-    domain/          State, Strategy, contratos y reglas monetarias
-    infrastructure/  SQLAlchemy, repositorios, consultas y SQLite
-    main.py          composición de la aplicación
-    seed.py          demostración transaccional
+    application/     dto/, ports/, use_cases/ y services/
+    domain/          models/, services/ y exceptions/; State y Strategy
+    infrastructure/
+      api/           controllers/, dto/, dependencies/ y middleware/
+      database/      models/, mappers/, repositories/ y unit_of_work/
+      config/        ruta de la base y orígenes locales
+      start/main.py  composición de la aplicación
+    main.py          entrada compatible para Uvicorn
+    seed.py          entrada compatible para la demostración
   tests/             pruebas de negocio, concurrencia y contratos HTTP
   requirements.txt
   requirements-dev.txt
@@ -84,6 +77,13 @@ frontend/
 docs/
 reglas_inventadas_o_asumidas.md
 ```
+
+El backend sigue las convenciones de `example/Ganker`: una clase por archivo,
+puertos `I...`, repositorios `...Impl`, modelos `...ORM` y casos de uso con
+`execute()`. Las entidades de dominio son clases Python independientes del ORM;
+cada entidad tiene un mapper en ambos sentidos. Los casos de uso intercambian
+comandos y respuestas tipadas. La organización y las pruebas de compatibilidad se detallan en
+[backend/README.md](backend/README.md).
 
 - [Reglas asumidas y justificaciones](reglas_inventadas_o_asumidas.md).
 - [Arquitectura y correspondencia con el DER](docs/arquitectura.md).
@@ -111,16 +111,3 @@ npm run preview
 
 `build` valida TypeScript y genera `frontend/dist/`. `preview` sirve ese build en **http://127.0.0.1:4173**, con el mismo proxy hacia FastAPI; el backend debe seguir encendido. El frontend no está servido desde FastAPI.
 
-## Base anterior y limpieza
-
-El prototipo anterior y sus documentos generados quedaron reemplazados. Se conservaron los PDF, la presentación del grupo y el DER del usuario. La base anterior se respaldó con la API de backup de SQLite en `backend/backups/nexo-anterior.sqlite3`, fuera de la aplicación activa. No hay una migración automática: las entidades y varias reglas cambiaron para respetar el DER.
-
-Para resguardar la base nueva, detener el backend y copiar `backend/data/nexo.sqlite3`. Para probar desde cero sin borrar datos, seleccionar otra ruta mediante `NEXO_DB_PATH`.
-
-## Límites
-
-Aplicación académica local, sin autenticación. El nombre del responsable es declarado por el operador. Las operaciones bancarias y fiscales se simulan; los comprobantes no tienen validez fiscal. El margen informado es bruto estimado, sin gastos ni impuestos.
-
-No se incluyen pagos combinados, clientes frecuentes, lotes/vencimientos, cancelación de operaciones ni disposición posterior de rechazos. Solo se aceptan devoluciones aptas para reventa, porque el DER no representa aptitud o merma. Todas estas decisiones están justificadas en el documento de reglas asumidas.
-
-La compilación del frontend y las pruebas de API/negocio se ejecutaron. La revisión visual en navegador y el arranque real de ambos servidores quedan limitados por la restricción de sockets del entorno de elaboración.
