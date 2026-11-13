@@ -9,6 +9,9 @@ class EstadoReposicionMapper:
 
     @staticmethod
     def domain_to_orm(entity: EstadoReposicion) -> EstadoReposicionORM:
-        return EstadoReposicionORM(
-            id=entity.id if entity.is_persisted() else None, nombre=entity.nombre
+        orm = EstadoReposicionORM(
+            nombre=entity.nombre
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

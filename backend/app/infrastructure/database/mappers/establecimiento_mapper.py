@@ -14,9 +14,11 @@ class EstablecimientoMapper:
 
     @staticmethod
     def domain_to_orm(entity: Establecimiento) -> EstablecimientoORM:
-        return EstablecimientoORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = EstablecimientoORM(
             nombre=entity.nombre,
             es_central=entity.es_central,
             domicilio_id=entity.domicilio_id,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

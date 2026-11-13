@@ -14,9 +14,11 @@ class ProveedorMapper:
 
     @staticmethod
     def domain_to_orm(entity: Proveedor) -> ProveedorORM:
-        return ProveedorORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = ProveedorORM(
             CUIT=entity.CUIT,
             nombre=entity.nombre,
             esta_activo=entity.esta_activo,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

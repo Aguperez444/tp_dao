@@ -18,11 +18,13 @@ class CambioEstadoBultoMapper:
 
     @staticmethod
     def domain_to_orm(entity: CambioEstadoBulto) -> CambioEstadoBultoORM:
-        return CambioEstadoBultoORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = CambioEstadoBultoORM(
             bulto_id=entity.bulto_id,
             estado_bulto_id=entity.estado_bulto_id,
             fecha=entity.fecha,
             responsable=entity.responsable,
             observacion=entity.observacion,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

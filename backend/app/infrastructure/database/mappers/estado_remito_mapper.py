@@ -9,6 +9,9 @@ class EstadoRemitoMapper:
 
     @staticmethod
     def domain_to_orm(entity: EstadoRemito) -> EstadoRemitoORM:
-        return EstadoRemitoORM(
-            id=entity.id if entity.is_persisted() else None, nombre=entity.nombre
+        orm = EstadoRemitoORM(
+            nombre=entity.nombre
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

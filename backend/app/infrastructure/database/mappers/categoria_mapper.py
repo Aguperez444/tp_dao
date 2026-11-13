@@ -9,6 +9,9 @@ class CategoriaMapper:
 
     @staticmethod
     def domain_to_orm(entity: Categoria) -> CategoriaORM:
-        return CategoriaORM(
-            id=entity.id if entity.is_persisted() else None, nombre=entity.nombre
+        orm = CategoriaORM(
+            nombre=entity.nombre
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

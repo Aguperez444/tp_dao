@@ -16,11 +16,13 @@ class ExistenciaMapper:
 
     @staticmethod
     def domain_to_orm(entity: Existencia) -> ExistenciaORM:
-        return ExistenciaORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = ExistenciaORM(
             establecimiento_id=entity.establecimiento_id,
             producto_id=entity.producto_id,
             almacenado_total=entity.almacenado_total,
             reservado=entity.reservado,
             minimo_permitido=entity.minimo_permitido,
         )
+        if entity.id is not None:
+            orm.id = entity.id
+        return orm

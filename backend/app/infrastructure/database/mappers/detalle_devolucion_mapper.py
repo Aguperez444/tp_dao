@@ -17,10 +17,12 @@ class DetalleDevolucionMapper:
 
     @staticmethod
     def domain_to_orm(entity: DetalleDevolucion) -> DetalleDevolucionORM:
-        return DetalleDevolucionORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = DetalleDevolucionORM(
             producto_id=entity.producto_id,
             devolucion_id=entity.devolucion_id,
             cantidad=entity.cantidad,
             importe_unitario=entity.importe_unitario,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

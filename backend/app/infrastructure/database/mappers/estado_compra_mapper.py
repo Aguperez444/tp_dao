@@ -9,6 +9,9 @@ class EstadoCompraMapper:
 
     @staticmethod
     def domain_to_orm(entity: EstadoCompra) -> EstadoCompraORM:
-        return EstadoCompraORM(
-            id=entity.id if entity.is_persisted() else None, nombre=entity.nombre
+        orm = EstadoCompraORM(
+            nombre=entity.nombre
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

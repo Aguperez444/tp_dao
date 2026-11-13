@@ -14,9 +14,11 @@ class DomicilioMapper:
 
     @staticmethod
     def domain_to_orm(entity: Domicilio) -> DomicilioORM:
-        return DomicilioORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = DomicilioORM(
             calle=entity.calle,
             altura=entity.altura,
             ciudad_id=entity.ciudad_id,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

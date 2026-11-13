@@ -18,8 +18,7 @@ class ProductoMapper:
 
     @staticmethod
     def domain_to_orm(entity: Producto) -> ProductoORM:
-        return ProductoORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = ProductoORM(
             nombre=entity.nombre,
             detalle=entity.detalle,
             categoria_id=entity.categoria_id,
@@ -28,3 +27,6 @@ class ProductoMapper:
             esta_activo=entity.esta_activo,
             codigo=entity.codigo,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

@@ -15,10 +15,12 @@ class RemitoMapper:
 
     @staticmethod
     def domain_to_orm(entity: Remito) -> RemitoORM:
-        return RemitoORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = RemitoORM(
             orden_reposicion_id=entity.orden_reposicion_id,
             estado_remito_id=entity.estado_remito_id,
             numero_remito=entity.numero_remito,
             fecha_emision=entity.fecha_emision,
         )
+        if entity.id is not None:
+            orm.id = entity.id
+        return orm

@@ -9,6 +9,9 @@ class EstadoBultoMapper:
 
     @staticmethod
     def domain_to_orm(entity: EstadoBulto) -> EstadoBultoORM:
-        return EstadoBultoORM(
-            id=entity.id if entity.is_persisted() else None, nombre=entity.nombre
+        orm = EstadoBultoORM(
+            nombre=entity.nombre
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

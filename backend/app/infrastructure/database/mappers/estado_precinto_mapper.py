@@ -9,6 +9,9 @@ class EstadoPrecintoMapper:
 
     @staticmethod
     def domain_to_orm(entity: EstadoPrecinto) -> EstadoPrecintoORM:
-        return EstadoPrecintoORM(
-            id=entity.id if entity.is_persisted() else None, nombre=entity.nombre
+        orm = EstadoPrecintoORM(
+            nombre=entity.nombre
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

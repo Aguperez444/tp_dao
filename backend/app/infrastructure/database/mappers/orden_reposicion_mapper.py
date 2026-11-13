@@ -15,10 +15,12 @@ class OrdenReposicionMapper:
 
     @staticmethod
     def domain_to_orm(entity: OrdenReposicion) -> OrdenReposicionORM:
-        return OrdenReposicionORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = OrdenReposicionORM(
             establecimiento_solicitante_id=entity.establecimiento_solicitante_id,
             establecimiento_proveedor_id=entity.establecimiento_proveedor_id,
             fecha=entity.fecha,
             estado_id=entity.estado_id,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

@@ -11,8 +11,10 @@ class CiudadMapper:
 
     @staticmethod
     def domain_to_orm(entity: Ciudad) -> CiudadORM:
-        return CiudadORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = CiudadORM(
             nombre=entity.nombre,
             provincia_id=entity.provincia_id,
         )
+        if entity.id is not None:
+            orm.id = entity.id
+        return orm

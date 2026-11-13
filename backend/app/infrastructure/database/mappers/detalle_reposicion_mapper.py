@@ -16,9 +16,11 @@ class DetalleReposicionMapper:
 
     @staticmethod
     def domain_to_orm(entity: DetalleReposicion) -> DetalleReposicionORM:
-        return DetalleReposicionORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = DetalleReposicionORM(
             producto_id=entity.producto_id,
             orden_id=entity.orden_id,
             cantidad=entity.cantidad,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

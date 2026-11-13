@@ -14,9 +14,11 @@ class DetalleBultoMapper:
 
     @staticmethod
     def domain_to_orm(entity: DetalleBulto) -> DetalleBultoORM:
-        return DetalleBultoORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm =  DetalleBultoORM(
             producto_id=entity.producto_id,
             bulto_id=entity.bulto_id,
             cantidad=entity.cantidad,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

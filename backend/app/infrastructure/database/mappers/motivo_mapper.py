@@ -9,6 +9,9 @@ class MotivoMapper:
 
     @staticmethod
     def domain_to_orm(entity: Motivo) -> MotivoORM:
-        return MotivoORM(
-            id=entity.id if entity.is_persisted() else None, nombre=entity.nombre
+        orm = MotivoORM(
+            nombre=entity.nombre
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm

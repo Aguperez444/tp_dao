@@ -16,11 +16,13 @@ class VentaMapper:
 
     @staticmethod
     def domain_to_orm(entity: Venta) -> VentaORM:
-        return VentaORM(
-            id=entity.id if entity.is_persisted() else None,
+        orm = VentaORM(
             local_id=entity.local_id,
             metodo_pago_id=entity.metodo_pago_id,
             total=entity.total,
             fecha=entity.fecha,
             numero_comprobante=entity.numero_comprobante,
         )
+        if entity.is_persisted():
+            orm.id = entity.id
+        return orm
